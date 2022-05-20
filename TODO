@@ -1,0 +1,7 @@
+update docker to latest in the import sync and maybe use docker settings sync too
+task 9 performance considerations. 
+retry
+set correlation id
+loggings
+reuse tokens
+use updateActions arary

@@ -1,0 +1,17 @@
+{
+  "name": "sample-aws-lambda",
+  "version": "1.0.0",
+  "description": "Sample API Extension code for order handling",
+  "main": "index.js",
+  "scripts": {
+    "zip": "zip -r ../aws-lambda.zip ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@commercetools/platform-sdk": "^2.7.0",
+    "@commercetools/sdk-client-v2": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1"
+  }
+}

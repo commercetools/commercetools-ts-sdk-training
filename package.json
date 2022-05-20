@@ -1,0 +1,48 @@
+{
+  "name": "commercetools-ts-sdk-training",
+  "version": "1.0.0",
+  "description": "Used in commercetools JavaScript Developer Training",
+  "main": "index.js",
+  "scripts": {
+    "1": "ts-node Task01_project_setup.ts",
+    "2": "ts-node Task02_customers.ts",
+    "3": "ts-node Task03_import_sync_products.ts",
+    "4a": "ts-node Task04a_states.ts",
+    "4b": "ts-node Task04b_checkout.ts",
+    "4c": "ts-node Task04c_merging.ts",
+    "5a": "ts-node Task05a_stores.ts",
+    "5b": "ts-node Task05b_product_selections.ts",
+    "5c": "ts-node Task05c_my.ts",
+    "6a": "ts-node Task06a_search.ts",
+    "6b": "ts-node Task06b_pagination.ts",
+    "6c": "ts-node Task06c_graphql.ts",
+    "7a": "ts-node Task07a_custom_types.ts",
+    "7b": "ts-node Task07b_custom_objects.ts",
+    "7c": "ts-node Task07c_extensions.ts",
+    "8": "ts-node Task08_subscriptions.ts"
+  },
+  "keywords": [
+    "commercetools",
+    "ts",
+    "sdk",
+    "training"
+  ],
+  "author": "commercetools Training",
+  "license": "MIT",
+  "dependencies": {
+    "@commercetools/importapi-sdk": "^2.5.0",
+    "@commercetools/platform-sdk": "^2.7.0",
+    "@commercetools/sdk-client-v2": "^1.4.0",
+    "chalk-animation": "1.6",
+    "cli-highlight": "^2.1.11",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^16.0.1",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "@types/chalk-animation": "^1.6.1",
+    "@types/node-fetch": "^2.6.1",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
