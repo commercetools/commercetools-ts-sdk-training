@@ -19,7 +19,7 @@ const subscriptionDraft: SubscriptionDraft = {
         resourceTypeId: "order",
         types: ["OrderCreated"]
     }]
-}
+};
 
 
 // const { clientId, clientSecret } = readConfig(Prefix.AWS);
@@ -36,7 +36,7 @@ const subscriptionDraft: SubscriptionDraft = {
 //         resourceTypeId: "order",
 //         types: ["OrderCreated"]
 //     }]
-// }
+// };
 
 
 apiRoot

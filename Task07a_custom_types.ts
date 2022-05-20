@@ -24,7 +24,7 @@ const typeDraft: TypeDraft = {
         },
         required: false,
     }]
-}
+};
 
 apiRoot
     .types()

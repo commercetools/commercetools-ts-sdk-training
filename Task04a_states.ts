@@ -33,6 +33,6 @@ const createStatesWithTransitions = async () => {
     return orderPackedState;
 };
 
-createStatesWithTransitions().then(log).catch(log)
+// createStatesWithTransitions().then(log).catch(log)
 
-// states.getStateByKey(orderPackedStateDraft.key).then(log).catch(log)
+states.getStateByKey(orderPackedStateDraft.key).then(log).catch(log)

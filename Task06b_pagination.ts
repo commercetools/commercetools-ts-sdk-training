@@ -5,7 +5,7 @@ import { log } from "./utils/logger";
 // UseCases
 // Fetching ALL products
 
-getAllProducts().then(log).catch(log);
+// getAllProducts().then(log).catch(log);
 
 // Fetching ALL products of a certain type
 // Fetching ALL orders
@@ -16,7 +16,7 @@ const getPagedQueryResults = async () => {
     // Instead of using offset to get a page, ask for products being greater than the id of the
     // previous products in your project
 
-    const PAGE_SIZE = 2; // How many products per page
+    const PAGE_SIZE = 20; // How many products per page
 
     let lastId: string, where: string | undefined, seenlastPage: boolean;
 
@@ -41,4 +41,4 @@ const getPagedQueryResults = async () => {
     } while (!seenlastPage)
 }
 
-// getPagedQueryResults().catch(log);
+getPagedQueryResults().catch(log);

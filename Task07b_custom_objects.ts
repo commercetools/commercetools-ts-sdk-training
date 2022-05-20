@@ -15,7 +15,7 @@ const customObjectDraft: CustomObjectDraft = {
         }
     }
 
-}
+};
 
 apiRoot
     .customObjects()

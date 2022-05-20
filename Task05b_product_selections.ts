@@ -14,7 +14,7 @@ createProductSelection(productSelectionKey, "Berlin Store Selection").then(log).
 
 // getProductSelectionByKey(productSelectionKey).then(log).catch(log);
 
-// addProductsToProductSelection(productSelectionKey, ['tulip-seed-product']).then(log).catch(log);
+// addProductsToProductSelection(productSelectionKey, ["tulip-seed-product"]).then(log).catch(log);
 
 // getProductsInProductSelection(productSelectionKey).then(log).catch(log);
 

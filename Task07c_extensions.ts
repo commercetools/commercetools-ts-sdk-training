@@ -15,7 +15,7 @@ const extensionDraft: ExtensionDraft = {
         resourceTypeId: "order",
         actions: ["Create"]
     }]
-}
+};
 
 
 // const { clientId, clientSecret } = readConfig(Prefix.AWS);
@@ -31,7 +31,7 @@ const extensionDraft: ExtensionDraft = {
 //         resourceTypeId: "order",
 //         actions: ["Create"]
 //     }]
-// }
+// };
 
 // apiRoot
 //     .extensions()
