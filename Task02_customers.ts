@@ -17,7 +17,8 @@ const customerDraft: CustomerDraft = {
     key: "tt-customer",
     addresses: [
         {
-            country: "DE"
+            country: "DE",
+            key: "tt-customer-address"
         }
     ],
     defaultBillingAddress: 0,
