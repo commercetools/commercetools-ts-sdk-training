@@ -3,7 +3,7 @@ import {
     checkImportOperationsStatus,
     checkImportSummary,
     createImportContainer,
-    importProducts, importPrices
+    importProducts
 } from "./handson/importService";
 import { log } from "./utils/logger";
 
@@ -14,9 +14,6 @@ createImportContainer(containerKey).then(log).catch(log);
 
 // import products
 // importProducts(containerKey).then(log).catch(log);
-
-// Import prices
-// importPrices(containerKey).then(log).catch(log);
 
 // check import summary for your container
 // checkImportSummary(containerKey).then(log).catch(log);
