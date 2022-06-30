@@ -13,8 +13,8 @@ getAllProducts().then(log).catch(log);
 
 const getPagedQueryResults = async () => {
 
-    // Instead of using offset to get a page, ask for products being greater than the id of the
-    // previous products in your project
+    // Instead of using offset to get a page, ask for products whose ids are greater than the largest id of the
+    // product in the previous page
 
     const PAGE_SIZE = 2; // How many products per page
 
