@@ -6,14 +6,24 @@ export const createCart = (customerKey: string): Promise<ClientResponse<Cart>> =
     throw new Error("Function not implemented");
 }
 
-export const createAnonymousCart = (): Promise<ClientResponse<Cart>> => {
-    throw new Error("Function not implemented");
-}
+export const createAnonymousCart = (): Promise<ClientResponse<Cart>> =>
+    apiRoot
+        .carts()
+        .post({
+            body: {
+                currency: "EUR",
+                country: "DE"
+            }
+        })
+        .execute();
 
-
-export const customerSignIn = (customerDetails: CustomerSignin): Promise<ClientResponse<CustomerSignInResult>> => {
-    throw new Error("Function not implemented");
-}
+export const customerSignIn = (customerDetails: CustomerSignin): Promise<ClientResponse<CustomerSignInResult>> =>
+    apiRoot
+        .login()
+        .post({
+            body: customerDetails
+        })
+        .execute();
 
 export const getCartById = (ID: string): Promise<ClientResponse<Cart>> =>
     apiRoot
@@ -108,7 +118,24 @@ export const setOrderState = (orderId: string, stateName: OrderState): Promise<C
     throw new Error("Function not implemented");
 }
 
-export const addPaymentToCart = (cartId: string, paymentId: string): Promise<ClientResponse<Cart>> => {
-    throw new Error("Function not implemented");
-}
+export const addPaymentToCart = (cartId: string, paymentId: string): Promise<ClientResponse<Cart>> =>
+    getCartById(cartId)
+        .then(cart =>
+            apiRoot
+                .carts()
+                .withId({ ID: cartId })
+                .post({
+                    body: {
+                        version: cart.body.version,
+                        actions: [{
+                            action: "addPayment",
+                            payment: {
+                                typeId: "payment",
+                                id: paymentId
+                            }
+                        }]
+                    }
+                })
+                .execute()
+        );
 
