@@ -41,7 +41,7 @@ export const addProductSelectionToStore = (storeKey: string, productSelectionKey
         );
 
 export const getProductsInStore = (storeKey: string): Promise<ClientResponse<ProductsInStorePagedQueryResponse>> =>
-    storeApiRoot
+    apiRoot
         .inStoreKeyWithStoreKeyValue({ storeKey })
         .productSelectionAssignments()
         .get({

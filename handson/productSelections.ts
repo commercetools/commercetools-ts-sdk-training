@@ -1,8 +1,6 @@
 import { ClientResponse, ProductSelection, ProductSelectionProductPagedQueryResponse } from "@commercetools/platform-sdk";
 import { apiRoot } from "./client";
 
-//TODO Product Selections
-
 export const getProductSelectionByKey = (key: string): Promise<ClientResponse<ProductSelection>> =>
     apiRoot
         .productSelections()
