@@ -11,7 +11,6 @@ export const getCustomersInStore = (storeKey: string): Promise<ClientResponse<Cu
     throw new Error("Function not implemented");
 }
 
-// until productSelection field definition fixed use as any at the end for update action
 export const addProductSelectionToStore = (storeKey: string, productSelectionKey: string): Promise<ClientResponse<Store>> => {
     throw new Error("Function not implemented");
 }
