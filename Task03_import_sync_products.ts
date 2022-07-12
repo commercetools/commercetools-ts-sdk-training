@@ -3,7 +3,7 @@ import {
     checkImportOperationsStatus,
     checkImportSummary,
     createImportContainer,
-    importProducts
+    importProductDrafts
 } from "./handson/importService";
 import { log } from "./utils/logger";
 
@@ -13,7 +13,7 @@ const containerKey = "tt-ImportContainer";
 createImportContainer(containerKey).then(log).catch(log);
 
 // import products
-// importProducts(containerKey).then(log).catch(log);
+// importProductDrafts(containerKey).then(log).catch(log);
 
 // check import summary for your container
 // checkImportSummary(containerKey).then(log).catch(log);

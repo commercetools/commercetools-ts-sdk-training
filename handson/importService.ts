@@ -27,7 +27,7 @@ export const checkImportOperationStatusById = (id: string): Promise<ClientRespon
     throw new Error("Function not implemented")
 }
 
-export const importProducts = async (importContainerKey: string): Promise<ClientResponse<ImportResponse>> => {
+export const importProductDrafts = async (importContainerKey: string): Promise<ClientResponse<ImportResponse>> => {
     throw new Error("Function not implemented")
 }
 
