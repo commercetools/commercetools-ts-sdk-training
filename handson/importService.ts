@@ -36,7 +36,7 @@ export const checkImportOperationStatusById = (id: string): Promise<ClientRespon
         .get()
         .execute();
 
-export const importProducts = async (importContainerKey: string): Promise<ClientResponse<ImportResponse>> =>
+export const importProductDrafts = async (importContainerKey: string): Promise<ClientResponse<ImportResponse>> =>
     importApiRoot
         .productDrafts()
         .importContainers()
@@ -124,14 +124,14 @@ const createPriceImportRequest = (): PriceImportRequest =>
     type: "price",
     resources: [
         {
-            key: "sf-price-import-redWine-key",
+            key: "tt-price-import-redWine-key",
             product: {
                 typeId: "product",
-                key: "sfs-RedWine"
+                key: "tt-RedWine"
             },
             "productVariant": {
                 typeId: "product-variant",
-                key: "sfs-RedWine"
+                key: "tt-RedWine"
             },
             value: {
                 "type": "centPrecision",

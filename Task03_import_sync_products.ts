@@ -13,7 +13,7 @@ const containerKey = "tt-ImportContainer";
 createImportContainer(containerKey).then(log).catch(log);
 
 // import products
-// importProducts(containerKey).then(log).catch(log);
+// importProductDrafts(containerKey).then(log).catch(log);
 
 // Import prices
 // importPrices(containerKey).then(log).catch(log);
