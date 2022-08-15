@@ -29,12 +29,12 @@ const customerDraft: CustomerDraft = {
 
 // getCustomerByKey(customerDraft.key!).then(log).catch(log);
 
-getCustomerByKey(customerDraft.key!)
-  .then(createCustomerToken)
-  .then(confirmCustomerEmail)
+// getCustomerByKey(customerDraft.key!)
+//   .then(createCustomerToken)
+//   .then(confirmCustomerEmail)
+//   .then(log)
+//   .catch(log);
+
+assignCustomerToCustomerGroup(customerDraft.key!, "indoor-customers")
   .then(log)
   .catch(log);
-
-// assignCustomerToCustomerGroup(customerDraft.key!, "indoor-customers")
-//     .then(log)
-//     .catch(log);
