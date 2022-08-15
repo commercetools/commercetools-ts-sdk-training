@@ -8,10 +8,8 @@ import { apiRoot } from "./handson/client";
 // https://docs.commercetools.com/http-api-projects-project.html#get-project
 
 // TODO: Get project settings
-
+apiRoot.get().execute().then(log).catch(log);
 
 // TODO: Get shipping method by id
 
-
 // TODO: Get standard tax category by key
-

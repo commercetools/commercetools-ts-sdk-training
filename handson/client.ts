@@ -15,7 +15,7 @@ const createApiClient = () => {
     readConfig(Prefix.DEV);
 
   const authMiddlewareOptions: AuthMiddlewareOptions = {
-    host,
+    host: oauthHost,
     credentials: {
       clientId,
       clientSecret,
