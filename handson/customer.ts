@@ -57,6 +57,28 @@ export const confirmCustomerEmail = (
 export const assignCustomerToCustomerGroup = (
   customerKey: string,
   customerGroupKey: string
-): Promise<ClientResponse<Customer>> => {
-  throw new Error("Function not implemented");
-};
+): Promise<ClientResponse<Customer>> =>
+  getCustomerByKey(customerKey).then((customer) =>
+    apiRoot
+      .customers()
+      .withId({ ID: customer.body.id })
+      .post({
+        body: {
+          version: customer.body.version,
+          actions: [
+            {
+              action: "setCustomerGroup",
+              customerGroup: {
+                key: customerGroupKey,
+                typeId: "customer-group",
+              },
+            },
+            {
+              action: "setMiddleName",
+              middleName: "A F",
+            },
+          ],
+        },
+      })
+      .execute()
+  );
