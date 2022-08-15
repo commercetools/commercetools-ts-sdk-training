@@ -29,15 +29,30 @@ export const createCustomer = (
 
 export const createCustomerToken = (
   customer: ClientResponse<Customer>
-): Promise<ClientResponse<CustomerToken>> => {
-  throw new Error("Function not implemented");
-};
+): Promise<ClientResponse<CustomerToken>> =>
+  apiRoot
+    .customers()
+    .emailToken()
+    .post({
+      body: {
+        id: customer.body.id,
+        ttlMinutes: 90,
+      },
+    })
+    .execute();
 
 export const confirmCustomerEmail = (
   token: ClientResponse<CustomerToken>
-): Promise<ClientResponse<Customer>> => {
-  throw new Error("Function not implemented");
-};
+): Promise<ClientResponse<Customer>> =>
+  apiRoot
+    .customers()
+    .emailConfirm()
+    .post({
+      body: {
+        tokenValue: token.body.value,
+      },
+    })
+    .execute();
 
 export const assignCustomerToCustomerGroup = (
   customerKey: string,
