@@ -1,28 +1,28 @@
 import { CustomerDraft } from "@commercetools/platform-sdk";
 import {
-    createCustomer,
-    getCustomerById,
-    getCustomerByKey,
-    createCustomerToken,
-    confirmCustomerEmail,
-    assignCustomerToCustomerGroup,
+  createCustomer,
+  getCustomerById,
+  getCustomerByKey,
+  createCustomerToken,
+  confirmCustomerEmail,
+  assignCustomerToCustomerGroup,
 } from "./handson/customer";
 import { log } from "./utils/logger";
 
 const customerDraft: CustomerDraft = {
-    firstName: "Test",
-    lastName: "Tester",
-    email: "test@test.com",
-    password: "password",
-    key: "tt-customer",
-    addresses: [
-        {
-            country: "DE",
-            key: "tt-customer-address"
-        }
-    ],
-    defaultBillingAddress: 0,
-    defaultShippingAddress: 0
+  firstName: "Igor",
+  lastName: "Tuag",
+  email: "tuag@imagionationmedia.com",
+  password: "password",
+  key: "it-customer",
+  addresses: [
+    {
+      country: "US",
+      key: "it-customer-address",
+    },
+  ],
+  defaultBillingAddress: 0,
+  defaultShippingAddress: 0,
 };
 
 createCustomer(customerDraft).then(log).catch(log);
