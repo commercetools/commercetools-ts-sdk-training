@@ -9,15 +9,13 @@ import {
 
 export const getCustomerById = (
   ID: string
-): Promise<ClientResponse<Customer>> => {
-  throw new Error("Function not implemented");
-};
+): Promise<ClientResponse<Customer>> =>
+  apiRoot.customers().withId({ ID }).get().execute();
 
 export const getCustomerByKey = (
   key: string
-): Promise<ClientResponse<Customer>> => {
-  throw new Error("Function not implemented");
-};
+): Promise<ClientResponse<Customer>> =>
+  apiRoot.customers().withKey({ key }).get().execute();
 
 export const createCustomer = (
   customerDraft: CustomerDraft
