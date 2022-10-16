@@ -3,7 +3,8 @@ import {
     checkImportOperationsStatus,
     checkImportSummary,
     createImportContainer,
-    importProductDrafts, importPrices
+    importProductDrafts, 
+    importPrices
 } from "./handson/importService";
 import { log } from "./utils/logger";
 
