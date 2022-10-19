@@ -84,6 +84,34 @@ export const addDiscountCodeToCart = (cartId: string, discountCode: string): Pro
             .execute()
         );
 
+export const addDirectDiscountToCart = (cartId: string, percent: number): Promise<ClientResponse<Cart>> =>
+    getCartById(cartId)
+        .then(cart => apiRoot
+            .carts()
+            .withId({ ID: cartId })
+            .post({
+                body: {
+                    version: cart.body.version,
+                    actions: [{
+                        action: "setDirectDiscounts",
+                        discounts: [
+                            {
+                                value: {
+                                    type: "relative",
+                                    permyriad: percent * 100,
+                                },
+                                target: {
+                                    type: "lineItems",
+                                    predicate: "1 = 1"
+                                }
+                            }
+                        ]
+                    }]
+                }
+            })
+            .execute()
+        );
+
 export const recalculate = (cartId: string): Promise<ClientResponse<Cart>> =>
     getCartById(cartId).then(cart =>
         apiRoot

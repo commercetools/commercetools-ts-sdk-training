@@ -46,11 +46,10 @@ export const createStagedQuote = (quoteRequestId: string): Promise<ClientRespons
                 .execute()
         )
 
-
-export const setValidTo = (StagedQuoteId: string, days: number): Promise<ClientResponse<StagedQuote>> =>
-    getStagedQuoteById(StagedQuoteId).then(stagedQuote => 
+export const setValidTo = (stagedQuoteId: string, days: number): Promise<ClientResponse<StagedQuote>> =>
+    getStagedQuoteById(stagedQuoteId).then(stagedQuote => 
             apiRoot.stagedQuotes()
-                .withId({ID: StagedQuoteId})
+                .withId({ID: stagedQuoteId})
                 .post({
                     body: {
                         actions: [{
@@ -63,10 +62,10 @@ export const setValidTo = (StagedQuoteId: string, days: number): Promise<ClientR
                 .execute()
         )
 
-export const setSellerComment = (StagedQuoteId: string, commment: string): Promise<ClientResponse<StagedQuote>> =>
-    getStagedQuoteById(StagedQuoteId).then(stagedQuote => 
+export const setSellerComment = (stagedQuoteId: string, commment: string): Promise<ClientResponse<StagedQuote>> =>
+    getStagedQuoteById(stagedQuoteId).then(stagedQuote => 
             apiRoot.stagedQuotes()
-                .withId({ID: StagedQuoteId})
+                .withId({ID: stagedQuoteId})
                 .post({
                     body: {
                         actions: [{
@@ -79,10 +78,10 @@ export const setSellerComment = (StagedQuoteId: string, commment: string): Promi
                 .execute()
         )
 
-export const changeStagedQuoteState = (StagedQuoteId: string, state: StagedQuoteState): Promise<ClientResponse<StagedQuote>> =>
-    getStagedQuoteById(StagedQuoteId).then(stagedQuote => 
+export const changeStagedQuoteState = (stagedQuoteId: string, state: StagedQuoteState): Promise<ClientResponse<StagedQuote>> =>
+    getStagedQuoteById(stagedQuoteId).then(stagedQuote => 
             apiRoot.stagedQuotes()
-                .withId({ID: StagedQuoteId})
+                .withId({ID: stagedQuoteId})
                 .post({
                     body: {
                         actions: [{
