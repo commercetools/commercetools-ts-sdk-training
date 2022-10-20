@@ -32,7 +32,7 @@ const createQuoteProcessTest = async () => {
     let quote = await quotes.createQuote(stagedQuote.body.id);
     log("Quote: " + quote.body.id);
 
-    stagedQuote = await quotes.changeStagedQuoteState(stagedQuote.body.id,"Sent");
+    stagedQuote = await quotes.changeStagedQuoteState(stagedQuote.body.id, "Sent");
 
     // buyer accepts the quote and an order is placed from the quote
     let order = await checkout.createOrderFromQuote(quote.body.id);
