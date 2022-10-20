@@ -25,7 +25,7 @@ const createQuoteProcessTest = async () => {
     await checkout.addDirectDiscountToCart(quotationCartId, 10);
 
     // seller adds comments
-    stagedQuote = await quotes.setSellerComment(stagedQuote.body.id,"Discount is added as requested");
+    stagedQuote = await quotes.setSellerComment(stagedQuote.body.id, "Discount is added as requested");
     log("Staged Quote: " + stagedQuote.body.id);
 
     // seller prepares a quote to be sent to the buyer and changes the state of staged quote to "sent"
