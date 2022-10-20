@@ -18,7 +18,7 @@ const createQuoteProcessTest = async () => {
 
     // seller creates a staged quote from the quote request
     let stagedQuote = await quotes.createStagedQuote(quoteRequest.body.id);
-    stagedQuote = await quotes.setValidTo(stagedQuote.body.id,2);
+    stagedQuote = await quotes.setValidTo(stagedQuote.body.id, 2);
 
     // seller adds the requested discount to the quotation cart
     let quotationCartId = await quotes.getStagedQuoteById(stagedQuote.body.id).then(stagedQuote => stagedQuote.body.quotationCart.id);
