@@ -3,7 +3,7 @@ import * as checkout from "./handson/order";
 import { log } from "./utils/logger";
 import * as quotes from "./handson/quotes"
 
-const customerKey = "nd-customer";
+const customerKey = "tt-customer";
 
 
 const createQuoteProcessTest = async () => {
