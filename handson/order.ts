@@ -195,7 +195,10 @@ export const createOrderFromQuote = (quoteId: string): Promise<ClientResponse<Or
 const createOrderFromQuoteDraft = (quoteId: string): Promise<OrderFromQuoteDraft> =>
     getQuoteById(quoteId).then(quote => {
         return {
-            quote: {id: quoteId,typeId:"quote"},
+            quote: {
+                   id: quoteId,
+                   typeId: "quote"
+            },
             version: quote.body.version
         };
     });
