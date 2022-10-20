@@ -22,7 +22,7 @@ const createQuoteProcessTest = async () => {
 
     // seller adds the requested discount to the quotation cart
     let quotationCartId = await quotes.getStagedQuoteById(stagedQuote.body.id).then(stagedQuote => stagedQuote.body.quotationCart.id);
-    await checkout.addDirectDiscountToCart(quotationCartId,10);
+    await checkout.addDirectDiscountToCart(quotationCartId, 10);
 
     // seller adds comments
     stagedQuote = await quotes.setSellerComment(stagedQuote.body.id,"Discount is added as requested");
