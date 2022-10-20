@@ -176,7 +176,10 @@ export const createOrderFromCart = (cartId: string): Promise<ClientResponse<Orde
 const createOrderFromCartDraft = (cartId: string): Promise<OrderFromCartDraft> =>
     getCartById(cartId).then(cart => {
         return {
-            cart: {id: cartId,typeId:"cart"},
+            cart: {
+                  id: cartId,
+                  typeId: "cart"
+            },
             version: cart.body.version,
         };
     });
