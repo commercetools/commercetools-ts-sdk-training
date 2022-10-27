@@ -1,4 +1,4 @@
-# AWS Lambda for order handling
+# GCP Function for order handling
 
 ## Installation
 

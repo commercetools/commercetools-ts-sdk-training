@@ -1,10 +1,12 @@
-# commercetools-ts-sdk-training
-commercetools-ts-sdk-training
+# commercetools Typescript Exam Preparation Training
+
+commercetools-ts-sdk-exam-prep-training
 
 https://ok.commercetools.com/training-offering-calendar
 
-NEW JAVASCRIPT COURSE USING THE NEW COMMERCETOOLS TS SDK 
-https://github.com/commercetools/commercetools-ts-sdk-training
+Javascript Developer exam preparation training repository
+
+https://github.com/commercetools/commercetools-ts-sdk-exam-prep-training
 
 ## Usage
 

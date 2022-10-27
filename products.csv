@@ -1,3 +1,0 @@
-productType,productId,inventoryId,articleId,productName,productDescription,basePrice,currencyCode,imageUrl
-sync-producttype,P1,SKU101,A101,RedWine,You will look good in this,1123,EUR,https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081455_1_medium.jpg
-sync-producttype,P2,SKU102,A102,BlueWine,You will look good in this,1000,EUR,https://s3-eu-west-1.amazonaws.com/commercetools-maximilian/products/081455_1_medium.jpg

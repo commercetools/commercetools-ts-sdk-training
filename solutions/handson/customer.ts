@@ -16,11 +16,15 @@ export const getCustomerByKey = (key: string): Promise<ClientResponse<Customer>>
         .execute();
 
 
-export const createCustomer = (customerDraft: CustomerDraft): Promise<ClientResponse<CustomerSignInResult>> => {
-    throw new Error("Function not implemented")
-}
+export const createCustomer = (customerDraft: CustomerDraft): Promise<ClientResponse<CustomerSignInResult>> =>
+    pocApiRoot
+        .customers()
+        .post({
+            body: customerDraft
+        })
+        .execute();
 
-export const createCustomerGroup = (customerGroupDraft: CustomerGroupDraft): Promise<ClientResponse<CustomerGroup>> => 
+export const createCustomerGroup = (customerGroupDraft: CustomerGroupDraft): Promise<ClientResponse<CustomerGroup>> =>
     pocApiRoot
         .customerGroups()
         .post({
@@ -71,6 +75,22 @@ export const confirmCustomerEmail = (token: ClientResponse<CustomerToken>): Prom
 export const assignCustomerToCustomerGroup = (
     customerKey: string,
     customerGroupKey: string
-): Promise<ClientResponse<Customer>> => {
-    throw new Error("Function not implemented")
-}
+): Promise<ClientResponse<Customer>> =>
+    getCustomerByKey(customerKey)
+        .then(customer => pocApiRoot
+            .customers()
+            .withKey({ key: customerKey })
+            .post({
+                body: {
+                    version: customer.body.version,
+                    actions: [{
+                        action: "setCustomerGroup",
+                        customerGroup: {
+                            typeId: "customer-group",
+                            key: customerGroupKey
+                        }
+                    }]
+                }
+            })
+            .execute()
+        );

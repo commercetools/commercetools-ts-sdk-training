@@ -1,6 +1,8 @@
-import { ClientResponse, Cart, CustomerSignin, CustomerSignInResult, Order, OrderFromCartDraft, OrderState, OrderFromQuoteDraft } from "@commercetools/platform-sdk";
+import { CustomLineItemDraft } from "@commercetools/importapi-sdk";
+import { ClientResponse, Cart, CustomerSignin, CustomerSignInResult, Order, OrderFromCartDraft, OrderState, OrderFromQuoteDraft, ShippingMethod, ShippingMethodPagedQueryResponse } from "@commercetools/platform-sdk";
 import { pocApiRoot } from "./client";
 import { getCustomerByKey } from "./customer";
+
 
 export const createCart = (customerKey: string): Promise<ClientResponse<Cart>> =>
     getCustomerByKey(customerKey)
@@ -12,10 +14,8 @@ export const createCart = (customerKey: string): Promise<ClientResponse<Cart>> =
                     country: "DE",
                     customerId: customer.body.id,
                     customerEmail: customer.body.email,
-                    shippingAddress: customer.body.addresses.find(
-                        address => address.id === customer.body.defaultShippingAddressId
-                    ),
-                    // inventoryMode: "ReserveOnOrder",
+                    shippingAddress: customer.body.addresses.find(address => address.id === customer.body.defaultShippingAddressId),
+                    inventoryMode: "ReserveOnOrder",
                     deleteDaysAfterLastModification: 1
                 }
             })
@@ -158,7 +158,7 @@ export const recalculate = (cartId: string): Promise<ClientResponse<Cart>> =>
 
 export const setShippingMethod = async (cartId: string): Promise<ClientResponse<Cart>> => {
 
-    const matchingShippingMethod = await pocApiRoot
+    const matchingShippingMethods = await pocApiRoot
         .shippingMethods()
         .matchingCart()
         .get({
@@ -167,7 +167,8 @@ export const setShippingMethod = async (cartId: string): Promise<ClientResponse<
             }
         })
         .execute()
-        .then(response => response.body.results[0]);
+
+    const matchingShippingMethod = matchingShippingMethods.body.results[0];
 
     return getCartById(cartId).then(cart =>
         pocApiRoot
@@ -190,9 +191,19 @@ export const setShippingMethod = async (cartId: string): Promise<ClientResponse<
 
 }
 
-export const createOrderFromCart = (cart: Cart): Promise<ClientResponse<Order>> => {
-    throw new Error("Function not implemented")
-}
+export const createOrderFromCart = (cart: ClientResponse<Cart>): Promise<ClientResponse<Order>> =>
+    pocApiRoot
+        .orders()
+        .post({
+            body: {
+                cart: {
+                    typeId: "cart",
+                    id: cart.body.id
+                },
+                version: cart.body.version
+            }
+        })
+        .execute();
 
 export const createOrderFromCartId = (cartId: string): Promise<ClientResponse<Order>> =>
     createOrderFromCartDraft(cartId).then(orderFromCartDraft =>

@@ -38,10 +38,10 @@ const getClient = () => {
 
 };
 
-const apiRoot = createApiBuilderFromCtpClient(getClient());
+const pocApiRoot = createApiBuilderFromCtpClient(getClient());
 
 const getCustomerById = (ID) =>
-    apiRoot
+    pocApiRoot
         .withProjectKey({ projectKey })
         .customers()
         .withId({ ID })

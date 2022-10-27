@@ -2,8 +2,8 @@ import { createApiBuilderFromCtpClient as createImportApiBuilderFromCtpClient } 
 import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
 import { AuthMiddlewareOptions, HttpMiddlewareOptions, ClientBuilder, PasswordAuthMiddlewareOptions } from "@commercetools/sdk-client-v2";
 import fetch from "node-fetch";
-import { ApiRoot, ImportApiRoot } from "../types/global";
-import { Prefix, Config, readConfig } from "../utils/config";
+import { ApiRoot, ImportApiRoot } from "../../types/global";
+import { Prefix, Config, readConfig } from "../../utils/config";
 
 
 const createApiClient = (prefix: Prefix) => {

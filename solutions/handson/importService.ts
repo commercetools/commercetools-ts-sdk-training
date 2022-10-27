@@ -20,9 +20,13 @@ export const createImportContainer = (key: string): Promise<ClientResponse<Impor
         })
         .execute();
 
-export const checkImportSummary = (importContainerKey: string): Promise<ClientResponse<ImportSummary>> => {
-    throw new Error("Function not implemented")
-}
+export const checkImportSummary = (importContainerKey: string): Promise<ClientResponse<ImportSummary>> =>
+    importApiRoot
+        .importContainers()
+        .withImportContainerKeyValue({ importContainerKey })
+        .importSummaries()
+        .get()
+        .execute();
 
 
 export const checkImportOperationsStatus = (importContainerKey: string): Promise<ClientResponse<ImportOperationPagedResponse>> =>
@@ -40,9 +44,22 @@ export const checkImportOperationStatusById = (id: string): Promise<ClientRespon
         .get()
         .execute();
 
-export const importProducts = async (importContainerKey: string, products: ClientResponse<ProductPagedQueryResponse>): Promise<ClientResponse<ImportResponse>> => {
-    throw new Error("Function not implemented")
-}
+export const importProducts = async (importContainerKey: string, products: ClientResponse<ProductPagedQueryResponse>): Promise<ClientResponse<ImportResponse>> =>
+    importApiRoot
+        .productDrafts()
+        .importContainers()
+        .withImportContainerKeyValue({ importContainerKey })
+        .post({
+            body: await createProductDraftImportRequest(products.body.results)
+        })
+        .execute();
+
+
+const createProductDraftImportRequest = async (products: Product[]): Promise<ProductDraftImportRequest> =>
+({
+    type: "product-draft",
+    resources: await getProductDraftImportArray(products),
+});
 
 
 const getProductDraftImportArray = async (products: Product[]): Promise<Array<ProductDraftImport>> => {

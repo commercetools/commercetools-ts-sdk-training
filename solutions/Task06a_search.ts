@@ -1,7 +1,7 @@
 import { FacetRange, FacetTerm, ProductProjection } from "@commercetools/platform-sdk";
 import { pocApiRoot } from "./handson/client";
 import { simulateSearch } from "./handson/search";
-import { log } from "./utils/logger";
+import { log } from "../utils/logger";
 
 
 const search = async () => {

@@ -3,10 +3,12 @@ import { config } from "dotenv";
 config();
 
 export const enum Prefix {
-    DEV = "DEV",
-    IMPORT = "IMPORT",
+    POC = "POC",
+    CONCEPT = "CONC_RO",
+    IMPORT = "POC",
     STORE = "BERLIN",
     ME = "ME",
+    STORE_ME = "BERLIN_ME",
     AWS = "AWS"
 };
 
@@ -19,6 +21,7 @@ export const readConfig = (prefix: string) => {
         host: process.env[prefix + "_API_URL"] || "",
         username: process.env[prefix + "_CUSTOMER_EMAIL"] || "",
         password: process.env[prefix + "_CUSTOMER_PASSWORD"] || "",
+        storeKey: process.env[prefix + "_STORE_KEY"] || ""
     };
 }
 
@@ -30,4 +33,5 @@ export type Config = {
     host: string;
     username?: string;
     password?: string;
+    storeKey?: string;
 }
