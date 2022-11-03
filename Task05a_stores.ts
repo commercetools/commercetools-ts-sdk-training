@@ -16,10 +16,10 @@ const storeKey = "berlin-store";
 //     })
 //     .catch(log);
 
-// getCustomerByKey("tt-customer")
-//     .then(customer => {
-//         createInStoreCart(storeKey, customer)
-//             .then(log)
-//             .catch(log);
-//     })
-//     .catch(log);
+getCustomerByKey("tt-customer")
+    .then(customer => {
+        createInStoreCart(storeKey, customer)
+            .then(log)
+            .catch(log);
+    })
+    .catch(log);

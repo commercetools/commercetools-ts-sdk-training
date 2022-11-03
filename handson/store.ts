@@ -4,11 +4,19 @@ import { apiRoot, storeApiRoot } from "./client";
 //TODO: update client.ts file
 
 export const getStoreByKey = (key: string): Promise<ClientResponse<Store>> => {
-    throw new Error("Function not implemented");
+    return apiRoot
+        .stores()
+        .withKey({ key })
+        .get()
+        .execute();
 }
 
 export const getCustomersInStore = (storeKey: string): Promise<ClientResponse<CustomerPagedQueryResponse>> => {
-    throw new Error("Function not implemented");
+    return storeApiRoot
+        .inStoreKeyWithStoreKeyValue({ storeKey })
+        .customers()
+        .get()
+        .execute();
 }
 
 export const addProductSelectionToStore = (storeKey: string, productSelectionKey: string): Promise<ClientResponse<Store>> => {
@@ -20,7 +28,18 @@ export const getProductsInStore = (storeKey: string): Promise<ClientResponse<Pro
 }
 
 export const createInStoreCart = (storeKey: string, customer: ClientResponse<Customer>): Promise<ClientResponse<Cart>> => {
-    throw new Error("Function not implemented");
+    return storeApiRoot
+        .inStoreKeyWithStoreKeyValue({ storeKey })
+        .carts()
+        .post({
+            body: {
+                currency: "EUR",
+                country: "DE",
+                customerId: customer.body.id,
+                customerEmail: customer.body.email
+            }
+        })
+        .execute();
 }
 
 
