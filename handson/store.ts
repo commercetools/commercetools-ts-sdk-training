@@ -20,11 +20,37 @@ export const getCustomersInStore = (storeKey: string): Promise<ClientResponse<Cu
 }
 
 export const addProductSelectionToStore = (storeKey: string, productSelectionKey: string): Promise<ClientResponse<Store>> => {
-    throw new Error("Function not implemented");
+    return getStoreByKey(storeKey)
+        .then(store => apiRoot
+            .stores()
+            .withKey({ key: storeKey })
+            .post({
+                body: {
+                    version: store.body.version,
+                    actions: [{
+                        action: "addProductSelection",
+                        productSelection: {
+                            key: productSelectionKey,
+                            typeId: "product-selection"
+                        },
+                        active: true
+                    }]
+                }
+            })
+            .execute()
+        );
 }
 
 export const getProductsInStore = (storeKey: string): Promise<ClientResponse<ProductsInStorePagedQueryResponse>> => {
-    throw new Error("Function not implemented");
+    return apiRoot
+        .inStoreKeyWithStoreKeyValue({ storeKey })
+        .productSelectionAssignments()
+        .get({
+            queryArgs: {
+                expand: ["product", "productSelection"]
+            }
+        })
+        .execute();
 }
 
 export const createInStoreCart = (storeKey: string, customer: ClientResponse<Customer>): Promise<ClientResponse<Cart>> => {
