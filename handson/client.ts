@@ -7,7 +7,36 @@ import { Prefix, Config, readConfig } from "../utils/config";
 
 
 const createApiClient = () => {
-    throw new Error("Function not implemented");
+    const {
+        clientId,
+        clientSecret,
+        host,
+        oauthHost,
+        projectKey
+    } = readConfig(Prefix.DEV);
+
+    const authMiddlewareOptions: AuthMiddlewareOptions = {
+        credentials: {
+            clientId,
+            clientSecret
+        },
+        host: oauthHost,
+        projectKey,
+        fetch
+    };
+
+    const httpMiddlewareOptions: HttpMiddlewareOptions = {
+        host,
+        fetch
+    };
+
+    const client = new ClientBuilder()
+        .withClientCredentialsFlow(authMiddlewareOptions)
+        .withHttpMiddleware(httpMiddlewareOptions)
+        .build();
+
+    return createApiBuilderFromCtpClient(client)
+        .withProjectKey({ projectKey });
 }
 
 const createImportApiClient = () => {

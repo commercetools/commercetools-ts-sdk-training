@@ -9,9 +9,29 @@ import { apiRoot } from "./handson/client";
 
 // TODO: Get project settings
 
+// apiRoot
+//     .get()
+//     .execute()
+//     .then(log)
+//     .catch(log);
 
 // TODO: Get shipping method by id
 
+// apiRoot
+//     .shippingMethods()
+//     .withId({ ID: "" })
+//     .get()
+//     .execute()
+//     .then(log)
+//     .catch(log);
 
 // TODO: Get standard tax category by key
+
+apiRoot
+    .taxCategories()
+    .withKey({ key: "standard-tax-category" })
+    .get()
+    .execute()
+    .then(log)
+    .catch(log);
 
