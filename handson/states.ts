@@ -2,11 +2,20 @@ import { ClientResponse, State, StateDraft } from "@commercetools/platform-sdk";
 import { apiRoot } from "./client";
 
 export const createNewState = (stateDraft: StateDraft): Promise<ClientResponse<State>> => {
-    throw new Error("Function not implemented");
+    return apiRoot
+        .states()
+        .post({
+            body: stateDraft
+        })
+        .execute();
 }
 
 export const getStateByKey = (key: string): Promise<ClientResponse<State>> => {
-    throw new Error("Function not implemented");
+    return apiRoot
+        .states()
+        .withKey({ key })
+        .get()
+        .execute();
 }
 
 export const getStateById = (ID: string) =>
@@ -17,5 +26,23 @@ export const getStateById = (ID: string) =>
         .execute();
 
 export const addTransition = (stateKey: string, transitionStateKeys: Array<string>): Promise<ClientResponse<State>> => {
-    throw new Error("Function not implemented");
+    return getStateByKey(stateKey).then(state => apiRoot
+        .states()
+        .withKey({ key: stateKey })
+        .post({
+            body: {
+                version: state.body.version,
+                actions: [{
+                    action: "setTransitions",
+                    transitions: transitionStateKeys.map(key => {
+                        return {
+                            key,
+                            typeId: "state"
+                        }
+                    })
+                }]
+            }
+        })
+        .execute()
+    );
 }
