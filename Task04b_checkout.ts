@@ -3,8 +3,8 @@ import { createPayment } from "./handson/payment";
 import { log } from "./utils/logger";
 
 const customerKey = "tt-customer";
-const cartId = "";
-const orderId = "";
+const cartId = "82cb8c0f-9db0-4122-b650-4c825d1ed701";
+const orderId = "8a9176bd-1b5e-4a71-95cd-35af4cedf2d9";
 
 const paymentDraft = {
     key: "payment" + Math.random().toString(36).substring(2, 7),
@@ -19,7 +19,7 @@ const paymentDraft = {
 }
 
 // create a cart and update the cartId variable
-checkout.createCart(customerKey).then(log).catch(log);
+// checkout.createCart(customerKey).then(log).catch(log);
 
 // checkout.addLineItemsToCart(cartId, ["tulip-seed-box", "tulip-seed-sack"]).then(log).catch(log);
 
@@ -66,4 +66,4 @@ const checkoutProcess = async () => {
     }
 };
 
-// checkoutProcess().then(log).catch(log);
+checkoutProcess().then(log).catch(log);
