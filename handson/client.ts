@@ -2,7 +2,7 @@ import { createApiBuilderFromCtpClient as createImportApiBuilderFromCtpClient } 
 import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
 import { AuthMiddlewareOptions, ClientBuilder, HttpMiddlewareOptions, PasswordAuthMiddlewareOptions } from "@commercetools/sdk-client-v2";
 import fetch from "node-fetch";
-import { ApiRoot, ImportApiRoot } from "../types/global";
+import { ApiRoot, ImportApiRoot, StoreMyApiRoot } from "../types/global";
 import { Prefix, Config, readConfig } from "../utils/config";
 
 
@@ -144,8 +144,50 @@ const createMyApiClient = () => {
         .withProjectKey({ projectKey });
 }
 
+const createStoreMyApiClient = () => {
+    const {
+        clientId,
+        clientSecret,
+        host,
+        oauthHost,
+        projectKey,
+        storeKey,
+        username,
+        password
+    } = readConfig(Prefix.STORE_ME);
+
+    const authMiddlewareOptions: PasswordAuthMiddlewareOptions = {
+        credentials: {
+            clientId,
+            clientSecret,
+            user: {
+                username,
+                password
+            }
+        },
+        host: oauthHost,
+        oauthUri: `/oauth/${projectKey}/in-store/key=${storeKey}/customers/token`,
+        projectKey,
+        fetch
+    }
+
+    const httpMiddlewareOptions: HttpMiddlewareOptions = {
+        host,
+        fetch
+    };
+
+    const client = new ClientBuilder()
+        .withPasswordFlow(authMiddlewareOptions)
+        .withHttpMiddleware(httpMiddlewareOptions)
+        .build();
+
+    return createApiBuilderFromCtpClient(client)
+        .withProjectKey({ projectKey })
+        .inStoreKeyWithStoreKeyValue({ storeKey });
+}
 
 export const apiRoot: ApiRoot = createApiClient();
 export const importApiRoot: ImportApiRoot = createImportApiClient();
 export const storeApiRoot: ApiRoot = createStoreApiClient();
 export const myApiRoot: ApiRoot = createMyApiClient();
+export const storeMyApiRoot: StoreMyApiRoot = createStoreMyApiClient();
