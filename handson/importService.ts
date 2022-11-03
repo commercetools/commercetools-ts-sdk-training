@@ -9,26 +9,60 @@ import {
     ImportResponse
 } from "@commercetools/importapi-sdk";
 import csvtojsonV2 from "csvtojson";
-import { importApiRoot } from "./client";
+import { apiRoot, importApiRoot } from "./client";
+
 
 export const createImportContainer = (key: string): Promise<ClientResponse<ImportContainer>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .importContainers()
+        .post({
+            body: {
+                key,
+                resourceType: "product-draft"
+            }
+        })
+        .execute();
 }
 
 export const checkImportSummary = (importContainerKey: string): Promise<ClientResponse<ImportSummary>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .importContainers()
+        .withImportContainerKeyValue({ importContainerKey })
+        .importSummaries()
+        .get()
+        .execute();
 }
 
 export const checkImportOperationsStatus = (importContainerKey: string): Promise<ClientResponse<ImportOperationPagedResponse>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .importContainers()
+        .withImportContainerKeyValue({ importContainerKey })
+        .importOperations()
+        .get({
+            queryArgs: {
+                debug: true
+            }
+        })
+        .execute();
 }
 
 export const checkImportOperationStatusById = (id: string): Promise<ClientResponse<ImportOperation>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .importOperations()
+        .withIdValue({ id })
+        .get()
+        .execute();
 }
 
 export const importProductDrafts = async (importContainerKey: string): Promise<ClientResponse<ImportResponse>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .productDrafts()
+        .importContainers()
+        .withImportContainerKeyValue({ importContainerKey })
+        .post({
+            body: await createProductDraftImportRequest()
+        })
+        .execute();
 }
 
 const createProductDraftImportRequest = async (): Promise<ProductDraftImportRequest> =>
