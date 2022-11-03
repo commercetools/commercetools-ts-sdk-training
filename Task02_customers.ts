@@ -25,7 +25,7 @@ const customerDraft: CustomerDraft = {
     defaultShippingAddress: 0
 };
 
-createCustomer(customerDraft).then(log).catch(log);
+// createCustomer(customerDraft).then(log).catch(log);
 
 // getCustomerByKey(customerDraft.key!).then(log).catch(log);
 
@@ -35,6 +35,6 @@ createCustomer(customerDraft).then(log).catch(log);
 //     .then(log)
 //     .catch(log);
 
-// assignCustomerToCustomerGroup(customerDraft.key!, "indoor-customers")
-//     .then(log)
-//     .catch(log);
+assignCustomerToCustomerGroup(customerDraft.key!, "indoor-customers")
+    .then(log)
+    .catch(log);
