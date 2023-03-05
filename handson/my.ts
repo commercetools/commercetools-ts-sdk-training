@@ -5,9 +5,16 @@ import { myApiRoot } from "./client";
 // TODO: SPA api-client
 
 export const getMe = (): Promise<ClientResponse<Customer>> => {
-    throw new Error("Function not implemented");
+    return myApiRoot
+        .me()
+        .get()
+        .execute();
 }
 
 export const getMyOrders = (): Promise<ClientResponse<OrderPagedQueryResponse>> => {
-    throw new Error("Function not implemented");
+    return myApiRoot
+        .me()
+        .orders()
+        .get()
+        .execute();
 }

@@ -2,11 +2,19 @@ import { apiRoot } from "./client";
 import { ClientResponse, Customer, CustomerDraft, CustomerSignInResult, CustomerToken } from "@commercetools/platform-sdk";
 
 export const getCustomerById = (ID: string): Promise<ClientResponse<Customer>> => {
-    throw new Error("Function not implemented")
+    return apiRoot
+        .customers()
+        .withId({ ID })
+        .get()
+        .execute();
 }
 
 export const getCustomerByKey = (key: string): Promise<ClientResponse<Customer>> => {
-    throw new Error("Function not implemented")
+    return apiRoot
+        .customers()
+        .withKey({ key })
+        .get()
+        .execute();
 }
 
 export const createCustomer = (customerDraft: CustomerDraft): Promise<ClientResponse<CustomerSignInResult>> => {

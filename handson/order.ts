@@ -37,7 +37,21 @@ export const addLineItemsToCart = (cartId: string, arrayOfSKUs: Array<string>): 
 }
 
 export const addDiscountCodeToCart = (cartId: string, discountCode: string): Promise<ClientResponse<Cart>> => {
-    throw new Error("Function not implemented");
+    return getCartById(cartId)
+        .then(cart => apiRoot
+            .carts()
+            .withId({ ID: cartId })
+            .post({
+                body: {
+                    version: cart.body.version,
+                    actions: [{
+                        action: "addDiscountCode",
+                        code: discountCode
+                    }]
+                }
+            })
+            .execute()
+        );
 }
 
 export const recalculate = (cartId: string): Promise<ClientResponse<Cart>> =>
@@ -111,11 +125,42 @@ export const getOrderById = (ID: string): Promise<ClientResponse<Order>> =>
         .execute();
 
 export const updateOrderCustomState = (orderId: string, customStateKey: string): Promise<ClientResponse<Order>> => {
-    throw new Error("Function not implemented");
+    return getOrderById(orderId)
+        .then(order => apiRoot
+            .orders()
+            .withId({ ID: orderId })
+            .post({
+                body: {
+                    version: order.body.version,
+                    actions: [{
+                        action: "transitionState",
+                        state: {
+                            key: customStateKey,
+                            typeId: "state"
+                        }
+                    }]
+                }
+            })
+            .execute()
+        );
 }
 
 export const setOrderState = (orderId: string, stateName: OrderState): Promise<ClientResponse<Order>> => {
-    throw new Error("Function not implemented");
+    return getOrderById(orderId)
+        .then(order => apiRoot
+            .orders()
+            .withId({ ID: orderId })
+            .post({
+                body: {
+                    version: order.body.version,
+                    actions: [{
+                        action: "changeOrderState",
+                        orderState: stateName
+                    }]
+                }
+            })
+            .execute()
+        );
 }
 
 export const addPaymentToCart = (cartId: string, paymentId: string): Promise<ClientResponse<Cart>> =>

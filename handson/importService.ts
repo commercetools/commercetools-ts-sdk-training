@@ -16,15 +16,33 @@ export const createImportContainer = (key: string): Promise<ClientResponse<Impor
 }
 
 export const checkImportSummary = (importContainerKey: string): Promise<ClientResponse<ImportSummary>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .importContainers()
+        .withImportContainerKeyValue({ importContainerKey })
+        .importSummaries()
+        .get()
+        .execute();
 }
 
 export const checkImportOperationsStatus = (importContainerKey: string): Promise<ClientResponse<ImportOperationPagedResponse>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .importContainers()
+        .withImportContainerKeyValue({ importContainerKey })
+        .importOperations()
+        .get({
+            queryArgs: {
+                debug: true
+            }
+        })
+        .execute();
 }
 
 export const checkImportOperationStatusById = (id: string): Promise<ClientResponse<ImportOperation>> => {
-    throw new Error("Function not implemented")
+    return importApiRoot
+        .importOperations()
+        .withIdValue({ id })
+        .get()
+        .execute();
 }
 
 export const importProductDrafts = async (importContainerKey: string): Promise<ClientResponse<ImportResponse>> => {
