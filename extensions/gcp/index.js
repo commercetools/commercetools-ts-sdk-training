@@ -26,7 +26,7 @@ exports.main = (req, res) => {
             case undefined:
             case true:
                 console.log("Can place order or custom field not defined");
-                res.status(200).send();
+                res.status(200).end();
                 break;
             case false:
                 console.error("Customer can not place orders");
@@ -34,7 +34,7 @@ exports.main = (req, res) => {
                     code: "InvalidOperation",
                     message: "Customer has been blocked from placing orders"
                 }]
-                res.status(400).send(errors);
+                res.status(400).send({ errors });
                 break;
         }
 
@@ -44,7 +44,7 @@ exports.main = (req, res) => {
             code: "InvalidOperation",
             message: "Customer was not found"
         }]
-        res.status(400).send(errors);
+        res.status(400).send({ errors });
     });
 
 };
