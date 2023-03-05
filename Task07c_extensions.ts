@@ -4,12 +4,15 @@ import { log } from "./utils/logger";
 import { Prefix, readConfig } from "./utils/config";
 
 
-
-const extensionDraft: ExtensionDraft = {
+/**
+ * Use extensionDraft:any instead of ExtensionDraft until they
+ * add GoogleCloudFunction to the SDK
+ */
+const extensionDraft: any = {
     key: "tt-order-checker",
     destination: {
-        type: "HTTP",
-        url: "https://europe-west3-ct-support.cloudfunctions.net/training-extensions-sample"
+        type: "GoogleCloudFunction",
+        url: "https://europe-west1-ct-support.cloudfunctions.net/training-extensions-sample"
     },
     triggers: [{
         resourceTypeId: "order",
@@ -33,9 +36,9 @@ const extensionDraft: ExtensionDraft = {
 //     }]
 // }
 
-// apiRoot
-//     .extensions()
-//     .post({ body: extensionDraft })
-//     .execute()
-//     .then(log)
-//     .catch(log);
+apiRoot
+    .extensions()
+    .post({ body: extensionDraft })
+    .execute()
+    .then(log)
+    .catch(log);
