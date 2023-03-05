@@ -22,14 +22,12 @@ const subscriptionDraft: SubscriptionDraft = {
 }
 
 
-// const { clientId, clientSecret } = readConfig(Prefix.AWS);
 // const subscriptionDraft: SubscriptionDraft = {
 //     key: "subscriptionSample",
 //     destination: {
 //         type: "SQS",
 //         queueUrl: "https://sqs.eu-central-1.amazonaws.com/349839637243/Training-Demo",
-//         accessKey: clientId,
-//         accessSecret: clientSecret,
+//         authenticationMode: "IAM",
 //         region: "eu-central-1"
 //     },
 //     messages: [{
