@@ -5,7 +5,7 @@ import { apiRoot } from "./handson/client";
 // ./handson/client.ts
 
 // So this code displays the project configuration
-// https://docs.commercetools.com/http-api-projects-project.html#get-project
+// https://docs.commercetools.com/api/projects/project#get-project
 
 // TODO: Get project settings
 
