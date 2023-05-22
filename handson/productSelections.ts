@@ -16,6 +16,7 @@ export const createProductSelection = (key: string, name: string): Promise<Clien
             body: {
                 key,
                 name: {
+
                     "en": name,
                     "de": name
                 }
@@ -61,6 +62,5 @@ export const getProductsInProductSelection = (productSelectionKey: string): Prom
             }
         })
         .execute();
-
 }
 
