@@ -19,7 +19,7 @@ export const createPayment = async (paymentData: any) =>
                             },
                             {
                                 action: "setStatusInterfaceCode",
-                                interfaceCode: "SUCCES"
+                                interfaceCode: "SUCCESS"
                             },
                             {
                                 action: "setStatusInterfaceText",
