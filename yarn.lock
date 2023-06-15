@@ -2,36 +2,33 @@
 # yarn lockfile v1
 
 
-"@commercetools/importapi-sdk@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.npmjs.org/@commercetools/importapi-sdk/-/importapi-sdk-4.2.0.tgz"
-  integrity sha512-7JF1oc/a2A4BIXunFdX92pciTSFTxYbJds3VHykHZ/JPW9QWfeHAW4OLf8cIULlAHwYdHoJKBJHyQWOi13WrzQ==
+"@commercetools/importapi-sdk@^4.6.0":
+  version "4.6.0"
+  resolved "https://registry.npmjs.org/@commercetools/importapi-sdk/-/importapi-sdk-4.6.0.tgz"
+  integrity sha512-UZ6Lc265JYHuQcnbQe4ehzngqutFyeMYYbXKRqtpfXfbsWncLvtZE3dRMDSTMld87GevK54nGyn/Z/zOENysBw==
   dependencies:
-    "@commercetools/sdk-client-v2" "^2.1.2"
+    "@commercetools/sdk-client-v2" "^2.1.6"
     "@commercetools/sdk-middleware-auth" "^7.0.0"
     "@commercetools/sdk-middleware-http" "^7.0.0"
     "@commercetools/sdk-middleware-logger" "^3.0.0"
-    querystring "^0.2.1"
 
-"@commercetools/platform-sdk@^4.5.0":
-  version "4.5.0"
-  resolved "https://registry.npmjs.org/@commercetools/platform-sdk/-/platform-sdk-4.5.0.tgz"
-  integrity sha512-WbvK/FxbYp5FMK7oRdXrMBxX1vGmpZHws9MG/l2g2q7qwGBdqSUxc0hPODJBISNh1LGkzW95MJAcC1ihV0ys7g==
+"@commercetools/platform-sdk@^4.9.0":
+  version "4.9.0"
+  resolved "https://registry.npmjs.org/@commercetools/platform-sdk/-/platform-sdk-4.9.0.tgz"
+  integrity sha512-TNF/lyi2f22fXm6rDYLcFM5jzf8QC+sCDAPdXqn/Xvx/sfA0Ewza62ys73xITPRml7PNWsJtqcz1h8j+k3N87w==
   dependencies:
-    "@commercetools/sdk-client-v2" "^2.1.2"
+    "@commercetools/sdk-client-v2" "^2.1.6"
     "@commercetools/sdk-middleware-auth" "^7.0.0"
     "@commercetools/sdk-middleware-http" "^7.0.0"
     "@commercetools/sdk-middleware-logger" "^3.0.0"
-    querystring "^0.2.1"
 
-"@commercetools/sdk-client-v2@^2.1.2", "@commercetools/sdk-client-v2@^2.1.3":
-  version "2.1.3"
-  resolved "https://registry.npmjs.org/@commercetools/sdk-client-v2/-/sdk-client-v2-2.1.3.tgz"
-  integrity sha512-om5YaqFYFiovYrKxrCmW7h89JWwUpaOv5QCwquDU+CJkH50oPdEVSiPwRejm5AUch3Zht2TVWgfbUBWG/Ob2vg==
+"@commercetools/sdk-client-v2@^2.1.6":
+  version "2.2.0"
+  resolved "https://registry.npmjs.org/@commercetools/sdk-client-v2/-/sdk-client-v2-2.2.0.tgz"
+  integrity sha512-/j/hINnuh3gdBeMrHUvuSZo+8nkckCHK3Nu6m3/ZkUqVkamRheU5ve/DlALvYpjs2XS2BdWTs1+Wsyyz1+x6iQ==
   dependencies:
     buffer "^6.0.3"
     node-fetch "^2.6.1"
-    querystring "^0.2.1"
 
 "@commercetools/sdk-middleware-auth@^7.0.0":
   version "7.0.1"
@@ -49,6 +46,15 @@
   version "3.0.0"
   resolved "https://registry.npmjs.org/@commercetools/sdk-middleware-logger/-/sdk-middleware-logger-3.0.0.tgz"
   integrity sha512-DhMXAA2yIch/AaGxy7st85Z1HFmeLtHWGkr9z5rX4xKjan4PHGB/IE5saAR+SNGHhs6+1Lp8vZEHDo3tFqVLmg==
+
+"@commercetools/ts-client@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/@commercetools/ts-client/-/ts-client-1.1.0.tgz"
+  integrity sha512-tgt14Le7rMmOiMJbiDrh+1okkq0djy1x5+pDPQy7HgkXG9WSuaIXlnhFDB3RrNrgG18pMXEO6UGdbzJHe+6WWw==
+  dependencies:
+    abort-controller "3.0.0"
+    buffer "^6.0.3"
+    node-fetch "^2.6.1"
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
@@ -100,10 +106,10 @@
   resolved "https://registry.npmjs.org/@types/chalk-animation/-/chalk-animation-1.6.1.tgz"
   integrity sha512-MSuZqFkBeKcik4oMzd/BjaTRYkLpNftRSYkI/oszmckHAZOTSKslWR1CRdURwsxXBgYHPRlb5JM6Cx+tkyXUAg==
 
-"@types/node-fetch@^2.6.1":
-  version "2.6.2"
-  resolved "https://registry.npmjs.org/@types/node-fetch/-/node-fetch-2.6.2.tgz"
-  integrity sha512-DHqhlq5jeESLy19TYhLakJ07kNumXWjcDdxXsLUMJZ6ue8VZJj4kLPQVE/2mdHh3xZziNF1xppu5lwmS53HR+A==
+"@types/node-fetch@^2.6.4":
+  version "2.6.4"
+  resolved "https://registry.npmjs.org/@types/node-fetch/-/node-fetch-2.6.4.tgz"
+  integrity sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==
   dependencies:
     "@types/node" "*"
     form-data "^3.0.0"
@@ -117,6 +123,13 @@
   version "1.4.3"
   resolved "https://registry.npmjs.org/@types/tinycolor2/-/tinycolor2-1.4.3.tgz"
   integrity sha512-Kf1w9NE5HEgGxCRyIcRXR/ZYtDv0V8FVPtYHwLxl0O+maGX0erE77pQlD0gpP+/KByMZ87mOA79SjifhSB3PjQ==
+
+abort-controller@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/abort-controller/-/abort-controller-3.0.0.tgz"
+  integrity sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
+  dependencies:
+    event-target-shim "^5.0.0"
 
 acorn-walk@^8.1.1:
   version "8.2.0"
@@ -204,7 +217,7 @@ camelcase@^4.1.0:
   resolved "https://registry.npmjs.org/camelcase/-/camelcase-4.1.0.tgz"
   integrity sha512-FxAv7HpHrXbh3aPo4o2qxHay2lkLY3x5Mw3KeE4KQE8ysVfziWeRZDwcjauvwBSGEC/nXUPzZy8zeh4HokqOnw==
 
-chalk-animation@1.6:
+chalk-animation@1.6.0:
   version "1.6.0"
   resolved "https://registry.npmjs.org/chalk-animation/-/chalk-animation-1.6.0.tgz"
   integrity sha512-Q8vVq6eD5IOhWI0s9WdUawDzMRjNrR4rOCiu409eZRTIHID5OjoTTEkpGZngL/BPQnL7yYmBhlXXpPJ9SYuARw==
@@ -352,6 +365,11 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
   integrity sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==
+
+event-target-shim@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz"
+  integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
 find-up@^2.0.0:
   version "2.1.0"
@@ -556,10 +574,10 @@ mz@^2.4.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-node-fetch@^2.6.1, node-fetch@^2.6.7:
-  version "2.6.9"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.9.tgz"
-  integrity sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==
+node-fetch@^2.6.1, node-fetch@^2.6.11, node-fetch@^2.6.7:
+  version "2.6.11"
+  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.11.tgz"
+  integrity sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==
   dependencies:
     whatwg-url "^5.0.0"
 
@@ -643,11 +661,6 @@ pify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/pify/-/pify-3.0.0.tgz"
   integrity sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==
-
-querystring@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/querystring/-/querystring-0.2.1.tgz"
-  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
 
 quick-lru@^1.0.0:
   version "1.1.0"
@@ -837,10 +850,10 @@ ts-node@^10.7.0:
     v8-compile-cache-lib "^3.0.1"
     yn "3.1.1"
 
-typescript@^4.6.4:
-  version "4.9.5"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.5.tgz"
-  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
+typescript@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.0.4.tgz"
+  integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"
