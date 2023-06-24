@@ -33,7 +33,7 @@
     "@commercetools/importapi-sdk": "^4.6.0",
     "@commercetools/platform-sdk": "^4.9.0",
     "@commercetools/ts-client": "^1.1.0",
-    "chalk-animation": "1.6.0",
+    "chalk-animation": "2.0.3",
     "cli-highlight": "^2.1.11",
     "csvtojson": "^2.0.10",
     "dotenv": "^16.0.1",
