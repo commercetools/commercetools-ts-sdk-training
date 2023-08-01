@@ -92,6 +92,7 @@ const getProductDraftImportArray = async (): Promise<Array<ProductDraftImport>> 
                 key: participantNamePrefix + "-" + product.productName,
                 prices: [
                     {
+                        key: "price1",
                         value: {
                             type: "centPrecision",
                             currencyCode: product.currencyCode,
