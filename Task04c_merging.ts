@@ -19,7 +19,10 @@ const mergingProcessTest = async () => {
     const customerDetails: CustomerSignin = {
         email: "test@test.com",
         password: "password",
-        anonymousCartId: anonymousCart.body.id,
+        anonymousCart: {
+            typeId: "cart",
+            id: anonymousCart.body.id
+        },
         anonymousCartSignInMode: "MergeWithExistingCustomerCart", // try switching to UseAsNewActiveCustomerCart
     };
 
