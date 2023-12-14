@@ -26,23 +26,25 @@ export const getStateById = (ID: string) =>
         .execute();
 
 export const addTransition = (stateKey: string, transitionStateKeys: Array<string>): Promise<ClientResponse<State>> => {
-    return getStateByKey(stateKey).then(state => apiRoot
-        .states()
-        .withKey({ key: stateKey })
-        .post({
-            body: {
-                version: state.body.version,
-                actions: [{
-                    action: "setTransitions",
-                    transitions: transitionStateKeys.map(key => {
-                        return {
-                            key,
-                            typeId: "state"
-                        }
-                    })
-                }]
-            }
-        })
-        .execute()
-    );
+    return getStateByKey(stateKey)
+        .then(state => {
+            return apiRoot
+                .states()
+                .withKey({ key: stateKey })
+                .post({
+                    body: {
+                        version: state.body.version,
+                        actions: [{
+                            action: "setTransitions",
+                            transitions: transitionStateKeys.map(key => {
+                                return {
+                                    typeId: "state",
+                                    key
+                                }
+                            })
+                        }]
+                    }
+                })
+                .execute();
+        });
 }

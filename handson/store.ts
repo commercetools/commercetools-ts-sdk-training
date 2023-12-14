@@ -67,6 +67,3 @@ export const createInStoreCart = (storeKey: string, customer: ClientResponse<Cus
         })
         .execute();
 }
-
-
-
