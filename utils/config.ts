@@ -5,7 +5,7 @@ config();
 export const enum Prefix {
     DEV = "DEV",
     IMPORT = "IMPORT",
-    STORE = "BERLIN",
+    STORE = "STORE",
     ME = "ME",
     AWS = "AWS"
 };
