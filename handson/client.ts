@@ -1,33 +1,32 @@
 import { createApiBuilderFromCtpClient as createImportApiBuilderFromCtpClient } from "@commercetools/importapi-sdk";
 import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
-import { AuthMiddlewareOptions, ClientBuilder, HttpMiddlewareOptions, PasswordAuthMiddlewareOptions } from "@commercetools/sdk-client-v2";
-import fetch from "node-fetch";
+import {
+    AuthMiddlewareOptions,
+    ClientBuilder,
+    HttpMiddlewareOptions,
+    PasswordAuthMiddlewareOptions,
+} from "@commercetools/sdk-client-v2";
 import { ApiRoot, ImportApiRoot, StoreMyApiRoot } from "../types/global";
 import { Prefix, Config, readConfig } from "../utils/config";
 
-
 const createApiClient = () => {
-    const {
-        clientId,
-        clientSecret,
-        host,
-        oauthHost,
-        projectKey
-    } = readConfig(Prefix.DEV);
+    const { clientId, clientSecret, host, oauthHost, projectKey } = readConfig(
+        Prefix.DEV
+    );
 
     const authMiddlewareOptions: AuthMiddlewareOptions = {
         credentials: {
             clientId,
-            clientSecret
+            clientSecret,
         },
         host: oauthHost,
         projectKey,
-        fetch
+        fetch,
     };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        fetch
+        fetch,
     };
 
     const client = new ClientBuilder()
@@ -35,32 +34,27 @@ const createApiClient = () => {
         .withHttpMiddleware(httpMiddlewareOptions)
         .build();
 
-    return createApiBuilderFromCtpClient(client)
-        .withProjectKey({ projectKey });
-}
+    return createApiBuilderFromCtpClient(client).withProjectKey({ projectKey });
+};
 
 const createImportApiClient = () => {
-    const {
-        clientId,
-        clientSecret,
-        host,
-        oauthHost,
-        projectKey
-    } = readConfig(Prefix.IMPORT);
+    const { clientId, clientSecret, host, oauthHost, projectKey } = readConfig(
+        Prefix.IMPORT
+    );
 
     const authMiddlewareOptions: AuthMiddlewareOptions = {
         credentials: {
             clientId,
-            clientSecret
+            clientSecret,
         },
         host: oauthHost,
         projectKey,
-        fetch
+        fetch,
     };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        fetch
+        fetch,
     };
 
     const client = new ClientBuilder()
@@ -68,32 +62,29 @@ const createImportApiClient = () => {
         .withHttpMiddleware(httpMiddlewareOptions)
         .build();
 
-    return createImportApiBuilderFromCtpClient(client)
-        .withProjectKeyValue({ projectKey });
-}
+    return createImportApiBuilderFromCtpClient(client).withProjectKeyValue({
+        projectKey,
+    });
+};
 
 const createStoreApiClient = () => {
-    const {
-        clientId,
-        clientSecret,
-        host,
-        oauthHost,
-        projectKey
-    } = readConfig(Prefix.STORE);
+    const { clientId, clientSecret, host, oauthHost, projectKey } = readConfig(
+        Prefix.STORE
+    );
 
     const authMiddlewareOptions: AuthMiddlewareOptions = {
         credentials: {
             clientId,
-            clientSecret
+            clientSecret,
         },
         host: oauthHost,
         projectKey,
-        fetch
+        fetch,
     };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        fetch
+        fetch,
     };
 
     const client = new ClientBuilder()
@@ -101,9 +92,8 @@ const createStoreApiClient = () => {
         .withHttpMiddleware(httpMiddlewareOptions)
         .build();
 
-    return createApiBuilderFromCtpClient(client)
-        .withProjectKey({ projectKey });
-}
+    return createApiBuilderFromCtpClient(client).withProjectKey({ projectKey });
+};
 
 const createMyApiClient = () => {
     const {
@@ -113,7 +103,7 @@ const createMyApiClient = () => {
         oauthHost,
         projectKey,
         username,
-        password
+        password,
     } = readConfig(Prefix.ME);
 
     const authMiddlewareOptions: PasswordAuthMiddlewareOptions = {
@@ -122,17 +112,17 @@ const createMyApiClient = () => {
             clientSecret,
             user: {
                 username,
-                password
-            }
+                password,
+            },
         },
         host: oauthHost,
         projectKey,
-        fetch
+        fetch,
     };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        fetch
+        fetch,
     };
 
     const client = new ClientBuilder()
@@ -140,9 +130,8 @@ const createMyApiClient = () => {
         .withHttpMiddleware(httpMiddlewareOptions)
         .build();
 
-    return createApiBuilderFromCtpClient(client)
-        .withProjectKey({ projectKey });
-}
+    return createApiBuilderFromCtpClient(client).withProjectKey({ projectKey });
+};
 
 const createStoreMyApiClient = () => {
     const {
@@ -153,7 +142,7 @@ const createStoreMyApiClient = () => {
         projectKey,
         storeKey,
         username,
-        password
+        password,
     } = readConfig(Prefix.STORE_ME);
 
     const authMiddlewareOptions: PasswordAuthMiddlewareOptions = {
@@ -162,18 +151,18 @@ const createStoreMyApiClient = () => {
             clientSecret,
             user: {
                 username,
-                password
-            }
+                password,
+            },
         },
         host: oauthHost,
         oauthUri: `/oauth/${projectKey}/in-store/key=${storeKey}/customers/token`,
         projectKey,
-        fetch
-    }
+        fetch,
+    };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        fetch
+        fetch,
     };
 
     const client = new ClientBuilder()
@@ -184,7 +173,7 @@ const createStoreMyApiClient = () => {
     return createApiBuilderFromCtpClient(client)
         .withProjectKey({ projectKey })
         .inStoreKeyWithStoreKeyValue({ storeKey });
-}
+};
 
 export const apiRoot: ApiRoot = createApiClient();
 export const importApiRoot: ImportApiRoot = createImportApiClient();
