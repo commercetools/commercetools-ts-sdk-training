@@ -8,10 +8,10 @@
 const functions = require('@google-cloud/functions-framework');
 const { projectKey, getCustomerById } = require("./client.js")
 
-functions.http('main', (req, res) => {
+functions.http('main', async (req, res) => {
   console.log("Incoming event for project", projectKey);
 
-  const order = event?.resource?.obj;
+  const order = req.body?.resource?.obj;
 
   console.log("New order has arrived", order?.lastModifiedAt);
   console.log("Order:", JSON.stringify(order));
@@ -19,31 +19,33 @@ functions.http('main', (req, res) => {
   const customerId = order?.customerId;
   console.log("CustomerId:", customerId);
 
-  getCustomerById(customerId).then(customerFetched => {
+  try {
+    const customerFetched = await getCustomerById(customerId);
     console.log("customerFetched", JSON.stringify(customerFetched));
 
     const canPlaceOrders = customerFetched?.body?.custom?.fields?.["allowed-to-place-orders"];
+
     switch (canPlaceOrders) {
       case undefined:
       case true:
         console.log("Can place order or custom field not defined");
-        res.status(201).end();
-        break;
+        return res.status(201).end();
+
       case false:
         console.log("Customer can not place orders");
         const errors = [{
           code: "InvalidOperation",
           message: "Customer has been blocked from placing orders"
         }]
-        res.status(400).json({ errors });
-        break;
+        return res.status(400).json({ errors });
     }
-  }).catch(e => {
+  } catch (e) {
     console.error("Customer was not found or general error", e);
     const errors = [{
       code: "InvalidOperation",
       message: e.message || "An unexpected error occurred"
     }]
-    res.status(400).json({ errors });
-  });
+    return res.status(400).json({ errors });
+  }
+
 });

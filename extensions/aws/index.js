@@ -29,7 +29,6 @@ exports.handler = async (event) => {
                 };
 
                 return response1;
-                break;
 
             case false:
                 const response2 = {
@@ -44,7 +43,7 @@ exports.handler = async (event) => {
                 };
 
                 return response2;
-                break;
+
         }
     } catch (e) {
         const response3 = {
