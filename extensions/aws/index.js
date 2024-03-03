@@ -20,43 +20,28 @@ exports.handler = async (event) => {
         switch (canPlaceOrders) {
             case undefined:
             case true:
-                const response1 = {
-                    statusCode: 201,
-                    body: JSON.stringify({
-                        actions: [],
-                        responseType: "UpdateRequest"
-                    })
+                return {
+                    actions: [],
+                    responseType: "UpdateRequest"
                 };
-
-                return response1;
 
             case false:
-                const response2 = {
-                    statusCode: 400,
-                    body: JSON.stringify({
-                        errors: [{
-                            code: "InvalidOperation",
-                            message: "Customer has been blocked from placing orders"
-                        }],
-                        responseType: "FailedValidation"
-                    }),
+                return {
+                    errors: [{
+                        code: "InvalidOperation",
+                        message: "Customer has been blocked from placing orders"
+                    }],
+                    responseType: "FailedValidation"
                 };
-
-                return response2;
 
         }
     } catch (e) {
-        const response3 = {
-            statusCode: 400,
-            body: JSON.stringify({
-                errors: [{
-                    code: "InvalidOperation",
-                    message: e.message || "An unexpected error occurred"
-                }],
-                responseType: "FailedValidation"
-            }),
+        return {
+            errors: [{
+                code: "InvalidOperation",
+                message: e.message || "An unexpected error occurred"
+            }],
+            responseType: "FailedValidation"
         };
-
-        return response3;
     }
 };
