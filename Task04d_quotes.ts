@@ -9,7 +9,7 @@ const customerKey = "tt-customer";
 const createQuoteProcessTest = async () => {
     // buyer prepares a cart with line items
     let customerCart = await checkout.createCart(customerKey);
-    customerCart = await checkout.addLineItemsToCart(customerCart.body.id, ['tulip-seed-box']);
+    customerCart = await checkout.addLineItemsToCart(customerCart.body.id, ['TULIPSEED02']);
     log("Cart: " + customerCart.body.id);
 
     // buyer prepares a quote from the cart
