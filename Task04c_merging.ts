@@ -9,9 +9,9 @@ const mergingProcessTest = async () => {
 
     let customerCart = await checkout.createCart(customerKey);
 
-    anonymousCart = await checkout.addLineItemsToCart(anonymousCart.body.id, ['tulip-seed-box', 'tulip-seed-box', 'tulip-seed-box']);
+    anonymousCart = await checkout.addLineItemsToCart(anonymousCart.body.id, ['TULIPSEED02', 'TULIPSEED02', 'TULIPSEED02']);
 
-    customerCart = await checkout.addLineItemsToCart(customerCart.body.id, ['tulip-seed-box', 'tulip-seed-sack', 'tulip-seed-package']);
+    customerCart = await checkout.addLineItemsToCart(customerCart.body.id, ['TULIPSEED02', 'TULIPSEED03', 'TULIPSEED01']);
 
     log("Anonymous Cart: " + anonymousCart.body.id);
     log("Customer Cart: " + customerCart.body.id);
