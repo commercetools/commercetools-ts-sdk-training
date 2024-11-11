@@ -3,9 +3,8 @@ import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
 import {
     AuthMiddlewareOptions,
     ClientBuilder,
-    HttpMiddlewareOptions,
-    PasswordAuthMiddlewareOptions,
-} from "@commercetools/sdk-client-v2";
+    HttpMiddlewareOptions
+} from "@commercetools/ts-client";
 import { ApiRoot, ImportApiRoot } from "../types/global";
 import { Prefix, Config, readConfig } from "../utils/config";
 
@@ -28,4 +27,3 @@ const createMyApiClient = () => {
 export const apiRoot: ApiRoot = createApiClient();
 // export const importApiRoot: ImportApiRoot = createImportApiClient();
 // export const storeApiRoot: ApiRoot = createStoreApiClient();
-// export const myApiRoot: ApiRoot = createMyApiClient();
