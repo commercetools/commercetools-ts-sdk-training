@@ -6,8 +6,6 @@ export const enum Prefix {
     DEV = "DEV",
     IMPORT = "IMPORT",
     STORE = "STORE",
-    ME = "ME",
-    STORE_ME = "STORE_ME",
     AWS = "AWS",
 }
 
@@ -18,8 +16,6 @@ export const readConfig = (prefix: string) => {
         projectKey: process.env[prefix + "_PROJECT_KEY"] || "",
         oauthHost: process.env[prefix + "_AUTH_URL"] || "",
         host: process.env[prefix + "_API_URL"] || "",
-        username: process.env[prefix + "_CUSTOMER_EMAIL"] || "",
-        password: process.env[prefix + "_CUSTOMER_PASSWORD"] || "",
         storeKey: process.env[prefix + "_STORE_KEY"] || "",
     };
 };
@@ -30,7 +26,5 @@ export type Config = {
     projectKey: string;
     oauthHost: string;
     host: string;
-    username?: string;
-    password?: string;
     storeKey?: string;
 };

@@ -9,7 +9,7 @@ import {
     ImportResponse
 } from "@commercetools/importapi-sdk";
 import csvtojsonV2 from "csvtojson";
-import { apiRoot, importApiRoot } from "./client";
+import { importApiRoot } from "./client";
 
 
 export const createImportContainer = (key: string): Promise<ClientResponse<ImportContainer>> => {
@@ -17,8 +17,7 @@ export const createImportContainer = (key: string): Promise<ClientResponse<Impor
         .importContainers()
         .post({
             body: {
-                key,
-                resourceType: "product-draft"
+                key
             }
         })
         .execute();
