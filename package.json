@@ -34,7 +34,6 @@
   "dependencies": {
     "@commercetools/importapi-sdk": "^5.14.0",
     "@commercetools/platform-sdk": "^7.19.0",
-    "@commercetools/ts-client": "2.1.1",
     "chalk-animation": "1.6.0",
     "cli-highlight": "^2.1.11",
     "csvtojson": "^2.0.10",

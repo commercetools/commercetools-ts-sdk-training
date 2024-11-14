@@ -4,9 +4,9 @@ import {
     AuthMiddlewareOptions,
     ClientBuilder,
     HttpMiddlewareOptions,
-} from "@commercetools/ts-client";
-import { ApiRoot, ImportApiRoot, StoreMyApiRoot } from "../types/global";
-import { Prefix, Config, readConfig } from "../utils/config";
+} from "@commercetools/sdk-client-v2";
+import { ApiRoot, ImportApiRoot } from "../types/global";
+import { Prefix, readConfig } from "../utils/config";
 
 const createApiClient = () => {
     const { clientId, clientSecret, host, oauthHost, projectKey } = readConfig(
@@ -20,12 +20,12 @@ const createApiClient = () => {
         },
         host: oauthHost,
         projectKey,
-        httpClient: fetch,
+        fetch,
     };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        httpClient: fetch,
+        fetch,
     };
 
     const client = new ClientBuilder()
@@ -48,12 +48,12 @@ const createImportApiClient = () => {
         },
         host: oauthHost,
         projectKey,
-        httpClient: fetch,
+        fetch,
     };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        httpClient: fetch,
+        fetch,
     };
 
     const client = new ClientBuilder()
@@ -78,12 +78,12 @@ const createStoreApiClient = () => {
         },
         host: oauthHost,
         projectKey,
-        httpClient: fetch,
+        fetch,
     };
 
     const httpMiddlewareOptions: HttpMiddlewareOptions = {
         host,
-        httpClient: fetch,
+        fetch,
     };
 
     const client = new ClientBuilder()
