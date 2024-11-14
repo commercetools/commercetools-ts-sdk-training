@@ -48,7 +48,7 @@
   resolved "https://registry.yarnpkg.com/@commercetools/sdk-middleware-logger/-/sdk-middleware-logger-3.0.0.tgz#4bfc7441d485b3f1046001f44200d12926accb84"
   integrity sha512-DhMXAA2yIch/AaGxy7st85Z1HFmeLtHWGkr9z5rX4xKjan4PHGB/IE5saAR+SNGHhs6+1Lp8vZEHDo3tFqVLmg==
 
-"@commercetools/ts-client@2.1.1", "@commercetools/ts-client@^2.1.1":
+"@commercetools/ts-client@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@commercetools/ts-client/-/ts-client-2.1.1.tgz#3fdd2edfd7ec4e8aba6998008548e19aefb2427b"
   integrity sha512-rFA0n0j3Z9lt1fInPJg6NNobDtRdctDgEXs4XGVemL7a9PEuA7fqHPgZmZ0HciIatYFkp+zBiP1tU0qNDMI+Fw==

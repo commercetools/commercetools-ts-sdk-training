@@ -4,7 +4,7 @@ import {
     AuthMiddlewareOptions,
     ClientBuilder,
     HttpMiddlewareOptions
-} from "@commercetools/ts-client";
+} from "@commercetools/sdk-client-v2";
 import { ApiRoot, ImportApiRoot } from "../types/global";
 import { Prefix, Config, readConfig } from "../utils/config";
 
