@@ -2,12 +2,13 @@
 # yarn lockfile v1
 
 
+
 "@commercetools/importapi-sdk@^5.1.0":
   version "5.1.0"
   resolved "https://registry.npmjs.org/@commercetools/importapi-sdk/-/importapi-sdk-5.1.0.tgz"
   integrity sha512-9cKcVpNjPJpRZVx4X4cO/HD3dM0cHfsOGDQpZ9vtGUyn3lRkkXUrIAjezBBHybMDzx1zqO9tH1p/bleCL5MVUw==
   dependencies:
-    "@commercetools/sdk-client-v2" "^2.2.2"
+    "@commercetools/sdk-client-v2" "^2.5.0"
     "@commercetools/sdk-middleware-auth" "^7.0.0"
     "@commercetools/sdk-middleware-http" "^7.0.0"
     "@commercetools/sdk-middleware-logger" "^3.0.0"
@@ -16,16 +17,19 @@
   version "7.1.0"
   resolved "https://registry.npmjs.org/@commercetools/platform-sdk/-/platform-sdk-7.1.0.tgz"
   integrity sha512-V0ZgxuAORWS76ocvvha+9pY9p6MOHmvxWCe+7n1JyHo5VrOIgB1mbrUNQwZOvKsr1nH9s4liAWnbAlv8jAEApg==
+
   dependencies:
-    "@commercetools/sdk-client-v2" "^2.2.2"
+    "@commercetools/sdk-client-v2" "^2.5.0"
     "@commercetools/sdk-middleware-auth" "^7.0.0"
     "@commercetools/sdk-middleware-http" "^7.0.0"
     "@commercetools/sdk-middleware-logger" "^3.0.0"
+    "@commercetools/ts-client" "^2.1.1"
 
 "@commercetools/sdk-client-v2@^2.2.2":
   version "2.3.0"
   resolved "https://registry.npmjs.org/@commercetools/sdk-client-v2/-/sdk-client-v2-2.3.0.tgz"
   integrity sha512-+vS6qRoKBbkunZCpdozung+7te97nFxaidLPqOTlz/9TmJaRfMMcYC/KUZCTS8S5a/4BFfY6DYujddolaU7e6Q==
+
   dependencies:
     buffer "^6.0.3"
     node-fetch "^2.6.1"
@@ -46,6 +50,15 @@
   version "3.0.0"
   resolved "https://registry.npmjs.org/@commercetools/sdk-middleware-logger/-/sdk-middleware-logger-3.0.0.tgz"
   integrity sha512-DhMXAA2yIch/AaGxy7st85Z1HFmeLtHWGkr9z5rX4xKjan4PHGB/IE5saAR+SNGHhs6+1Lp8vZEHDo3tFqVLmg==
+
+"@commercetools/ts-client@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@commercetools/ts-client/-/ts-client-2.1.1.tgz#3fdd2edfd7ec4e8aba6998008548e19aefb2427b"
+  integrity sha512-rFA0n0j3Z9lt1fInPJg6NNobDtRdctDgEXs4XGVemL7a9PEuA7fqHPgZmZ0HciIatYFkp+zBiP1tU0qNDMI+Fw==
+  dependencies:
+    abort-controller "3.0.0"
+    buffer "^6.0.3"
+    node-fetch "^2.6.1"
 
 "@cspotcode/source-map-support@^0.8.0":
   version "0.8.1"
@@ -108,6 +121,13 @@
   version "1.4.6"
   resolved "https://registry.npmjs.org/@types/tinycolor2/-/tinycolor2-1.4.6.tgz"
   integrity sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==
+
+abort-controller@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-3.0.0.tgz#eaf54d53b62bae4138e809ca225c8439a6efb392"
+  integrity sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
+  dependencies:
+    event-target-shim "^5.0.0"
 
 acorn-walk@^8.1.1:
   version "8.3.1"
@@ -326,6 +346,11 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
   integrity sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==
+
+event-target-shim@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
+  integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
 find-up@^2.0.0:
   version "2.1.0"

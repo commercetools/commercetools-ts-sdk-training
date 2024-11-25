@@ -30,8 +30,8 @@
   "author": "commercetools Training",
   "license": "MIT",
   "dependencies": {
-    "@commercetools/importapi-sdk": "^5.1.0",
-    "@commercetools/platform-sdk": "^7.1.0",
+    "@commercetools/importapi-sdk": "^5.14.0",
+    "@commercetools/platform-sdk": "^7.19.0",
     "chalk-animation": "1.6.0",
     "cli-highlight": "^2.1.11",
     "csvtojson": "^2.0.10",

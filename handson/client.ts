@@ -3,8 +3,7 @@ import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
 import {
     AuthMiddlewareOptions,
     ClientBuilder,
-    HttpMiddlewareOptions,
-    PasswordAuthMiddlewareOptions,
+    HttpMiddlewareOptions
 } from "@commercetools/sdk-client-v2";
 import { ApiRoot, ImportApiRoot } from "../types/global";
 import { Prefix, Config, readConfig } from "../utils/config";
