@@ -35,12 +35,12 @@
     "chalk-animation": "1.6.0",
     "cli-highlight": "^2.1.11",
     "csvtojson": "^2.0.10",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@types/chalk-animation": "^1.6.1",
-    "@types/node": "^18.19.4",
+    "@types/node": "^18.19.65",
     "ts-node": "^10.7.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.7.2"
   }
 }
