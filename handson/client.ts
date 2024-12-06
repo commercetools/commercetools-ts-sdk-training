@@ -20,10 +20,6 @@ const createStoreApiClient = () => {
     throw new Error("Function not implemented");
 };
 
-const createMyApiClient = () => {
-    throw new Error("Function not implemented");
-};
-
 export const apiRoot: ApiRoot = createApiClient();
 // export const importApiRoot: ImportApiRoot = createImportApiClient();
 // export const storeApiRoot: ApiRoot = createStoreApiClient();
