@@ -7,7 +7,6 @@
     "1": "ts-node Task01_project_setup.ts",
     "2": "ts-node Task02_customers.ts",
     "3": "ts-node Task03_import_sync_products.ts",
-    "8": "ts-node Task08_subscriptions.ts",
     "4a": "ts-node Task04a_states.ts",
     "4b": "ts-node Task04b_checkout.ts",
     "4c": "ts-node Task04c_merging.ts",
@@ -17,8 +16,7 @@
     "6b": "ts-node Task06b_pagination.ts",
     "6c": "ts-node Task06c_graphql.ts",
     "7a": "ts-node Task07a_custom_types.ts",
-    "7b": "ts-node Task07b_custom_objects.ts",
-    "7c": "ts-node Task07c_extensions.ts"
+    "7b": "ts-node Task07b_custom_objects.ts"
   },
   "keywords": [
     "commercetools",
