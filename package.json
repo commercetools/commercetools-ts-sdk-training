@@ -13,7 +13,6 @@
     "4c": "ts-node Task04c_merging.ts",
     "5a": "ts-node Task05a_stores.ts",
     "5b": "ts-node Task05b_product_selections.ts",
-    "5c": "ts-node Task05c_my.ts",
     "6a": "ts-node Task06a_search.ts",
     "6b": "ts-node Task06b_pagination.ts",
     "6c": "ts-node Task06c_graphql.ts",
