@@ -42,4 +42,4 @@ The following (or later) must be installed before the TypeScript SDK can be used
 - Npm v10
 - Yarn v1
 
-for questions email training@commercetools.com
+For questions email training@commercetools.com
